@@ -1,0 +1,113 @@
+        -:    0:Source:calculator.c
+        -:    0:Graph:calculator.gcno
+        -:    0:Data:calculator.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "calculator.h"
+        -:    2:#include <stdio.h>
+        -:    3:#include <stdlib.h>
+        -:    4:
+function main called 1 returned 100% blocks executed 38%
+        1:    5:int main(int argc, char *argv[])
+        -:    6:{
+        -:    7:	int a,b, result;
+        -:    8:	char opr;
+        -:    9:
+        1:   10:	if(argc!=4)
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+        -:   11:	{
+    #####:   12:		printf("Invalid arguments...\n");
+call    0 never executed
+    #####:   13:		return -1;
+        -:   14:	}
+        -:   15:
+        -:   16:	//get values
+        1:   17:	a = atoi(argv[1]);
+        1:   18:	b = atoi(argv[3]);
+        -:   19:
+        -:   20:	//get operator
+        1:   21:	opr=argv[2][0];
+        -:   22:
+        -:   23:	//calculate according to operator
+        1:   24:	switch(opr)
+branch  0 taken 100%
+branch  1 taken 0%
+branch  2 taken 0%
+branch  3 taken 0%
+branch  4 taken 0%
+        -:   25:	{
+        1:   26:		case '+':
+        1:   27:		    result = add_(a, b);
+call    0 returned 100%
+        -:   28:
+        1:   29:			break;
+    #####:   30:		case '-':
+    #####:   31:			result=sub_(a,b);
+call    0 never executed
+    #####:   32:			break;
+    #####:   33:		case '_':
+    #####:   34:			result=multiply_(a,b);
+call    0 never executed
+    #####:   35:			break;
+    #####:   36:		case '/':
+    #####:   37:		    result = div_(a,b);
+call    0 never executed
+    #####:   38:		default:
+    #####:   39:			result=0;
+    #####:   40:			break;
+        -:   41:	}
+        -:   42:
+        1:   43:	if(opr=='+' || opr=='-' || opr=='_'|| opr== '/')
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+        1:   44:		printf("Result: %d %c %d = %d\n",a,opr,b,result);
+call    0 returned 100%
+        -:   45:	else
+    #####:   46:		printf("Undefined Operator...\n");
+call    0 never executed
+        -:   47:
+        1:   48:	return 0;
+        -:   49:}
+        -:   50:
+        -:   51:/**
+        -:   52: * Function to add two numbers
+        -:   53: */
+function add_ called 1 returned 100% blocks executed 100%
+        1:   54:float add_(float num1, float num2)
+        -:   55:{
+        1:   56:    return num1 + num2;
+        -:   57:}
+        -:   58:
+        -:   59:/**
+        -:   60: * Function to subtract two numbers
+        -:   61: */
+function sub_ called 0 returned 0% blocks executed 0%
+    #####:   62:float sub_(float num1, float num2)
+        -:   63:{
+    #####:   64:    return num1 - num2;
+        -:   65:}
+        -:   66:
+        -:   67:/**
+        -:   68: * Function to multiply two numbers
+        -:   69: */
+function multiply_ called 0 returned 0% blocks executed 0%
+    #####:   70:float multiply_(float num1, float num2)
+        -:   71:{
+    #####:   72:    return num1 * num2;
+        -:   73:}
+        -:   74:
+        -:   75:/**
+        -:   76: * Function to divide two numbers
+        -:   77: */
+function div_ called 0 returned 0% blocks executed 0%
+    #####:   78:float div_(float num1, float num2)
+        -:   79:{
+    #####:   80:    return num1 / num2;
+        -:   81:}
